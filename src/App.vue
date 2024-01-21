@@ -25,12 +25,12 @@ export default {
 
   <main>
 
-    <div class="div-type1">
+    <div id="div-type1">
       <label for="name">Name</label>
       <input type="text" v-model="name">
     </div>
 
-    <div class="div-type1">
+    <div id="div-type1">
       <label for="surname">Surname</label>
       <input type="text" v-model="surname">
     </div>
@@ -61,22 +61,23 @@ header {
 }
 
 main {
-  margin-top: 1rem;
-  width: calc((100% / 12)* 8);
+  margin: 1rem auto auto auto;
+  width: calc((100% / 12)* 6);
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  & div-type1 {
+  & #div-type1 {
     margin-top: .5rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    border: solid 1px white;
+    justify-content: space-between;
+    border: solid 2px white;
     border-radius: 10px;
 
     & label {
       text-align: center;
+      margin-left: .25rem;
 
     }
 
