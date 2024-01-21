@@ -110,6 +110,7 @@ main {
     & input {
       text-align: center;
       border-radius: 10px;
+      color: white;
     }
 
   }
@@ -134,5 +135,9 @@ main {
     border-radius: 20px;
     box-shadow: 4px 6px rgb(179, 179, 179);
   }
+}
+
+p {
+  color: white;
 }
 </style>
