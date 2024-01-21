@@ -25,6 +25,9 @@ export default {
       }
     }
   },
+  backvariation(id) {
+    document.getElementById(`${id}`).style.backgroundColor = 'green';
+  }
 }
 
 </script>
@@ -53,7 +56,8 @@ export default {
     </div>
 
     <div id="div-type3">
-      <p>{{ lengthCalculator(name, surname) }} {{ evenOrOdd(lengthCalculator(name, surname)) }}</p>
+      <p id="p-output">{{ lengthCalculator(name, surname) }} {{
+        evenOrOdd(lengthCalculator(name, surname)) }}</p>
     </div>
 
 
