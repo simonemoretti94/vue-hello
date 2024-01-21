@@ -25,8 +25,8 @@ export default {
       }
     }
   },
-  backvariation(id) {
-    document.getElementById(`${id}`).style.backgroundColor = 'green';
+  changeBack() {
+    document.getElementById('p-output').style.scale = '1.2';
   }
 }
 
@@ -56,7 +56,7 @@ export default {
     </div>
 
     <div id="div-type3">
-      <p id="p-output">{{ lengthCalculator(name, surname) }} {{
+      <p on-mouseenter="changeBack()" id="p-output">{{ lengthCalculator(name, surname) }} {{ //changeback() doesn't works
         evenOrOdd(lengthCalculator(name, surname)) }}</p>
     </div>
 
