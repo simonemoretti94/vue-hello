@@ -7,6 +7,7 @@ export default {
       greetings: 'Welcome to vue-hello repo!',
       name: '',
       surname: '',
+      classe: '',
     }
   },
   methods: {
@@ -23,11 +24,14 @@ export default {
       else {
         return 'is odd!';
       }
+    },
+    changeBack() {
+      this.classe = 'green';
+    },
+    changeBack2() {
+      this.classe = '';
     }
   },
-  changeBack() {
-    document.getElementById('p-output').style.scale = '1.2';
-  }
 }
 
 </script>
@@ -55,8 +59,8 @@ export default {
       <p>So you are {{ name + ' ' + surname }}, even {{ lengthCalculator(name, surname) }} characters!</p>
     </div>
 
-    <div id="div-type3">
-      <p on-mouseenter="changeBack()" id="p-output">{{ lengthCalculator(name, surname) }} {{ //changeback() doesn't works
+    <div  @mouseenter="changeBack()" @mouseout="changeBack2()"  :class="classe" id="div-type3">
+      <p>{{ lengthCalculator(name, surname) }} {{ //changeback() doesn't works
         evenOrOdd(lengthCalculator(name, surname)) }}</p>
     </div>
 
@@ -139,5 +143,9 @@ main {
 
 p {
   color: white;
+}
+
+.green{
+  background-color: green;
 }
 </style>
