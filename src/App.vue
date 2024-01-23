@@ -8,7 +8,7 @@ export default {
       name: '',
       surname: '',
 
-      /* changeback() variables */
+      /* changeDiv() variables */
       classe: '',
       counter: 0,
     }
@@ -28,10 +28,10 @@ export default {
         return 'is odd!';
       }
     },
-    changeBack() {
+    changeDiv() {
       this.counter++;
       if (this.counter % 2 !== 0) {
-        this.classe = 'green';
+        this.classe = 'green size';
       }
       else {
         this.classe = '';
@@ -66,7 +66,7 @@ export default {
       <p>So you are {{ name + ' ' + surname }}, even {{ lengthCalculator(name, surname) }} characters!</p>
     </div>
 
-    <div @mouseenter="changeBack()" @mouseout="changeBack()" :class="classe" id="div-type3">
+    <div @mouseenter="changeDiv()" @mouseout="changeDiv()" :class="classe" id="div-type3">
       <p>{{ lengthCalculator(name, surname) }} {{ //changeback() doesn't works
         evenOrOdd(lengthCalculator(name, surname)) }}</p>
     </div>
@@ -159,9 +159,16 @@ p {
   color: white;
 }
 
+/* changeDiv() classes */
 .green {
   background-color: green;
 }
+
+.size {
+  transform: scale(.9);
+}
+
+/* end changeDiv() classes */
 
 footer {
   display: flex;
