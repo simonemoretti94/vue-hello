@@ -7,7 +7,10 @@ export default {
       greetings: 'Welcome to vue-hello repo!',
       name: '',
       surname: '',
+
+      /* changeback() variables */
       classe: '',
+      counter: 0,
     }
   },
   methods: {
@@ -26,10 +29,14 @@ export default {
       }
     },
     changeBack() {
-      this.classe = 'green';
-    },
-    changeBack2() {
-      this.classe = '';
+      this.counter++;
+      if (this.counter % 2 !== 0) {
+        this.classe = 'green';
+      }
+      else {
+        this.classe = '';
+      }
+      console.log('counter: ', this.counter);
     }
   },
 }
@@ -59,7 +66,7 @@ export default {
       <p>So you are {{ name + ' ' + surname }}, even {{ lengthCalculator(name, surname) }} characters!</p>
     </div>
 
-    <div  @mouseenter="changeBack()" @mouseout="changeBack2()"  :class="classe" id="div-type3">
+    <div @mouseenter="changeBack()" @mouseout="changeBack()" :class="classe" id="div-type3">
       <p>{{ lengthCalculator(name, surname) }} {{ //changeback() doesn't works
         evenOrOdd(lengthCalculator(name, surname)) }}</p>
     </div>
@@ -145,7 +152,7 @@ p {
   color: white;
 }
 
-.green{
+.green {
   background-color: green;
 }
 </style>
