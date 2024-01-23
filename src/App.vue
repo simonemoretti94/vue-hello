@@ -73,6 +73,13 @@ export default {
 
 
   </main>
+
+  <footer>
+    <div id="div-type4">
+      <p id="counter">click counter:{{ counter }}</p>
+    </div>
+
+  </footer>
 </template>
 
 <style>
@@ -154,5 +161,29 @@ p {
 
 .green {
   background-color: green;
+}
+
+footer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+  & #div-type4 {
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: -2rem;
+    margin-right: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.521);
+
+    & p#counter {
+      font-size: x-small;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(255, 255, 255);
+    }
+  }
 }
 </style>
